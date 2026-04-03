@@ -12,13 +12,18 @@ print(c)
 #比较运算符和逻辑运算符and,or,not
 
 #比较运算符
-flag0=1==1
-flag1=6>2
-flag2=4<1
-flag3=1!=3
+flag0=1==1              #True
+flag1=6>2               #True
+flag2=4<1               #False
+flag3=1!=3              #True
 print('flag0=',flag0)
 print('flag1=',flag1)
 print('flag2=',flag2)
 print('flag3=',flag3)
 
-#逻辑运算符
+#逻辑运算符and,not,or
+print(flag0 and flag1)   #只要有一个False就是False
+print(flag0 and flag2)
+print(flag0 or flag2)    #只要有一个True就是True
+print(not flag3)         #与值反着输出
+print(not flag2)
