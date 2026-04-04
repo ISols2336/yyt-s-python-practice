@@ -67,3 +67,22 @@ elif score>=60:
 
 else:
     print('E')
+
+
+
+#练习，输入三条边的长度，如果能构成三角形就计算周长和面积；否则给出“不能构成三角形”的提示。
+
+import math
+
+a = float(input('请输入a边长:'))
+b = float(input('请输入b边长:'))
+c = float(input('请输入c边长:'))
+if a+b>c and a+c>b and c+b>a :
+    Perimeter = a + b + c
+    p = Perimeter/2
+    area = math.sqrt(p*(p-a)*(p-b)*(p-c)) 
+    print(f'Perimeter={Perimeter:.1f}')
+    print(f'area={area:.1f}')
+
+else :
+    print('不能构成三角形')
