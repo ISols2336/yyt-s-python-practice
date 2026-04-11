@@ -80,9 +80,9 @@ c = float(input('请输入c边长:'))
 if a+b>c and a+c>b and c+b>a :
     Perimeter = a + b + c
     p = Perimeter/2
-    area = math.sqrt(p*(p-a)*(p-b)*(p-c)) 
-    print(f'Perimeter={Perimeter:.1f}')
-    print(f'area={area:.1f}')
+    area = math.sqrt(p*(p-a)*(p-b)*(p-c))          #sqrt的作用是开根号，必须要导入math模块才能使用，如果不导入math模块，就无法使用sqrt函数，sqrt函数的作用是开根号，sqrt(x)表示x的平方根，也就是x的1/2次幂，如果x是负数，那么sqrt(x)就会返回一个复数，如果x是0，那么sqrt(x)就会返回0，如果x是正数，那么sqrt(x)就会返回一个正数
+    print(f'{Perimeter=:.1f}')            #更简洁的写法是print(f'{Perimeter=:.1f}')，因为f-string中可以直接使用变量名=的形式来输出变量的值，这样就不需要在f-string中写出变量名了，直接写出变量名=就可以了，这样就可以更简洁的输出变量的值了，{Perimeter:.1f}表示将Perimeter的值保留一位小数
+    print(f'{area=:.1f}')                      
 
 else :
     print('不能构成三角形')
