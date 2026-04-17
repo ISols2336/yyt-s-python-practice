@@ -82,4 +82,4 @@ if is_ == False:
     print(f'{nummer}不是素数')
 
 else :
-    print(f'{nummer}是素数')
+    print(f'{nummer}是素数')     #累死我了
