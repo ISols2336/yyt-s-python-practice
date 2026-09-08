@@ -75,3 +75,4 @@ print(str4[::2])     #step 2,gobewrd
 print(str4[:2])      #结束位置为2，开始省略，默认为0go
 print(str4[3:])      #dbye,world 从下标一直取到末尾
 print(str4[::-2])    #drwebog，省略start取起点，省略end直到方向末尾，step为-2，反向切片
+

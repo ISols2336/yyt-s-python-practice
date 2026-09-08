@@ -105,3 +105,4 @@ print(b.decode('UTF-8'))   #建议在编码时使用UTF-8，解码时也使用UT
 
 c = a.encode('GBK')        
 print(c.decode('gbk'))
+
