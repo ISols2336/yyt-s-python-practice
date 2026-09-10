@@ -9,9 +9,9 @@
 nummer = 100
 while nummer < 1000 :
     
-    third = nummer % 10
-    second = nummer // 10 % 10
-    first =  nummer // 100
+    third = nummer % 10          #个位
+    second = nummer // 10 % 10   #十位
+    first =  nummer // 100       #百位
 
     if first ** 3 + second ** 3 + third ** 3 != nummer and \
     first ** 3 + second ** 3 + third ** 3 > 500:
@@ -19,3 +19,5 @@ while nummer < 1000 :
         print(nummer)
     
     nummer += 1
+
+# deepseek 酱整理注释，代码一行没动

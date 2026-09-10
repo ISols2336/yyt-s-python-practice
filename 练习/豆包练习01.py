@@ -19,21 +19,19 @@ print(c%d)
 
 
 #3.让用户输入身高（米）和体重（千克）
-#计算公式：
-#BMI = 体重 ÷ (身高 × 身高)
-#输出 BMI，保留 2 位小数
+#BMI = 体重 ÷ (身高 × 身高)，保留 2 位小数
 
 BMI=(kg:=float(input('请输入体重'))/(meter:=float(input('请输入身高'))**2))
 print(BMI)
 
 
 #4.让用户输入年龄
-#直接输出一句话：
-#您今年 X 岁，成年状态：True/False
-#成年状态就是：年龄 >= 18 的结果
+#输出：您今年 X 岁，成年状态：True/False（成年即年龄 >= 18）
 
 
 altjahre=int(input('请输入年龄'))
 zhuangtai=bool(altjahre>=18)
 
 print(f'您今年{altjahre:.0f}岁',','f"成年状态:{zhuangtai}")
+
+# deepseek 酱整理注释，代码一行没动

@@ -18,3 +18,5 @@ if a+b>c and a+c>b and c+b>a :
 
 else :
     print('不能构成三角形')
+
+# deepseek 酱整理注释，代码一行没动

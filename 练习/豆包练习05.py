@@ -17,3 +17,5 @@ print(nums10)
 arr = [2, 7, 11, 4, 15, 8, 20]
 itme = [i for i in arr if i < 10]
 print(itme)
+
+# deepseek 酱整理注释，代码一行没动

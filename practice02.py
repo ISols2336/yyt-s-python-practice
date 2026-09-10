@@ -1,20 +1,22 @@
-a=100                  #为a赋值100
-b=114.514              #为b赋值114.514（浮点数）
-c='我的python练习'      #为c赋值字符串类型（str）  
-d=''                   #为d赋值，无内容字符串
-e='d'                    #为e赋值为d  
+a=100
+b=114.514
+c='我的python练习'
+d=''                   #空字符串
+e='d'
 f=12
 
-print(float(a))        #转换为浮点数打印a
+print(float(a))
 
-print(int(b))          #将b转换为int整数打印
+print(int(b))          #114，截断取整，不是四舍五入
 
-print(bool(c))         #bool类型输出str，只要字符串有内容，输出内容就为True
+print(bool(c))         #True：非空字符串为真
 
-print(bool(d))         #输出为False
+print(bool(d))         #False
 
-print(chr(a))          #int类型转str类型，100为d
+print(chr(a))          #d：编码转字符
 
-print(ord(e))          #str类型转为int类型，d为100
+print(ord(e))          #100：字符转编码
 
-print(str(f),'天')     #转化为str字符串类型
+print(str(f),'天')
+
+# deepseek 酱整理注释，代码一行没动

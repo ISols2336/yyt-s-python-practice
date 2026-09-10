@@ -3,10 +3,10 @@
 
 languages = ['Python','C++','Java','Kotlin']
 for element in range(len(languages)):
-    print(element + 1,languages[element])   #len函数可以获取列表内元素的个数，range(len(languages))则构成了range(N),0--N-1的范围，作为列表元素的索引
+    print(element + 1,languages[element])   #len 取元素个数，range(N) 得到 0 到 N-1 的下标
 
 
-#还可以对列表做循环
+#更直接的写法：直接遍历元素
 for language in languages :
     print(language)
 
@@ -23,3 +23,5 @@ for _ in range(move) :
 
 for index in range(len(times)) :
     print(f'骰子点{index + 1}出现了{times[index]}次')
+
+# deepseek 酱整理注释，代码一行没动

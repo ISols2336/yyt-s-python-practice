@@ -1,4 +1,6 @@
 #精简版
+#先取两数中较小的，再从它往下试除
+
 nummer00 = int(input('请输入第一个数：'))
 nummer01 = int(input('请输入第二个数：'))
 
@@ -15,3 +17,5 @@ for i in range(min_num,0,-1) :
     if nummer01 % i == 0 and nummer00 % i == 0:
         print(f'{nummer00}和{nummer01}的最大公约数为{i}')
         break
+
+# deepseek 酱整理注释，代码一行没动

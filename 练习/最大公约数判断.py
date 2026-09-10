@@ -1,4 +1,5 @@
 #输入两个大于 0 的正整数，求两个数的最大公约数。
+#做法：从较小的那个数往下试除，第一个能同时整除两数的就是答案。
 
 nummer00 = int(input('请输入第一个数字'))
 nummer01 = int(input('请输入第二个数字'))
@@ -17,3 +18,5 @@ elif nummer01 > nummer00 :
             break
 else :
     print(f'{nummer00}和{nummer01}的最大公约数为{nummer00}')
+
+# deepseek 酱整理注释，代码一行没动

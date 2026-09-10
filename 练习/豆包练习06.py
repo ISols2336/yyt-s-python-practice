@@ -20,3 +20,5 @@ print(stu_scores)
 print('打印第几个学生成绩？')
 stu = int(input('请输入'))
 print(stu_scores[stu - 1])
+
+# deepseek 酱整理注释，代码一行没动

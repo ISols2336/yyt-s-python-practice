@@ -1,23 +1,23 @@
-#字符串,由零个或多个字符组成的有限序列
+#字符串：由零个或多个字符组成的有限序列
 
 s1 = '''hello,
 wonderful
 world!'''
-print(s1)         #定义多行字符串	
+print(s1)         #三引号定义多行字符串
 
-s2 = '\\hello\\'  #可以在字符串中使用\来表示转义，也就是说\后面的字符不再是它原来的意义
+s2 = '\\hello\\'  #\ 转义：\ 后面的字符不再是它本来的意义
 print(s2)
 s3 = '\'world\''
-print(s3)         #例如：\n不是代表字符\和字符n，而是表示换行
+print(s3)         #例如 \n 不是字符 \ 和 n，而是换行
 
-#原始字符串,以r或R开头的字符串，这种字符串被称为原始字符串，意思是字符串中的每个字符都是它本来的含义
+#原始字符串：以 r 或 R 开头，字符串里每个字符都是它本来的含义
 s4 = '\it \is \time \to \read \now'
 s5 = r'\it \is \time \to \read \now'
 print(s4)
 print(s5)
 
 
-#字符串的比较   一个一个比较编码的大小，如果前几个一样，则最长的为大
+#字符串比较：逐个比较编码大小，前面都一样时更长的大
 s6 = str(input('请输入文本1'))
 s7 = str(input('请输入文本2'))
 
@@ -72,7 +72,8 @@ print(str4[-3])  #r
 #切片[start:end:step]    step默认是1    取头不取尾
 print(str4[::1])     #goodbye,world  省略start从0开始，省略end一直取到末尾
 print(str4[::2])     #step 2,gobewrd
-print(str4[:2])      #结束位置为2，开始省略，默认为0go
-print(str4[3:])      #dbye,world 从下标一直取到末尾
-print(str4[::-2])    #drwebog，省略start取起点，省略end直到方向末尾，step为-2，反向切片
+print(str4[:2])      #结束位置为2，开始省略，默认为0，结果 go
+print(str4[3:])      #dbye,world 从下标 3 一直取到末尾
+print(str4[::-2])    #drwebog，step 为负表示反向取
 
+# deepseek 酱整理注释，代码一行没动

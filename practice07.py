@@ -1,13 +1,15 @@
+#原神牛逼
+
 status_code = int(input('响应状态码: '))
 match status_code:
-    case 400: description = 'Bad Request'               #和if,elif,else的作用一样，匹配成功后执行冒号后面的代码，如果没有匹配成功，就执行case _后的代码
+    case 400: description = 'Bad Request'
     case 401: description = 'Unauthorized'
     case 403: description = 'Forbidden'
     case 404: description = 'Not Found'
     case 405: description = 'Method Not Allowed'
     case 418: description = 'I am a teapot'
     case 429: description = 'Too many requests'
-    case _: description = 'Unknown Status Code'
+    case _: description = 'Unknown Status Code'      #case _：兜底，匹配任何值但不绑定变量
 
 print('状态码描述:', description)
 
@@ -15,11 +17,11 @@ print('状态码描述:', description)
 
 status_code = int(input('响应状态码: '))
 match status_code:
-    case 400 | 405: description = 'Invalid Request'        #也可以用|连接多个值，表示这些值都匹配，如果匹配成功，就执行冒号后面的代码
+    case 400 | 405: description = 'Invalid Request'        #用 | 连接多个值，任意一个匹配即可
     case 401 | 403 | 404: description = 'Not Allowed'
     case 418: description = 'I am a teapot'
     case 429: description = 'Too many requests'
-    case _: description = 'Unknown Status Code'            #case_匹配任何值，如果前面的case都没有匹配成功，就执行这个case，并且case_并不会将match后变量的值赋值给_，如果这个值你不想使用，可以用_来表示
+    case _: description = 'Unknown Status Code'
 print('状态码描述:', description)
 
 
@@ -32,18 +34,16 @@ match status_code:
         print("页面不存在")
     case 500:
         print("服务器挂了")
-    case x:                         #case后面跟一个变量名，表示匹配任何值，并将该值赋给变量，如果前面的case都没有匹配成功，就执行这个case
-        print(f"未知状态码：{x}")    #case x表示将match后变量的值赋值给x
-                                    #如果想使用case后的值，可以在case后面跟一个变量名，这样就可以在case块中使用这个变量了，如果前面的case都没有匹配成功，就执行这个case，并且将match后变量的值赋给这个变量，这样就可以在case块中使用这个变量了
-                                    #原神牛逼
+    case x:                         #case 加变量名：匹配任何值并绑定到 x，后面的 case 就轮不到了
+        print(f"未知状态码：{x}")    #所以这里才能用 x
 
 
-x = float(input('x = '))            #嵌套结构，如果if语句的代码块中还有if语句，那么就形成了嵌套结构，嵌套结构可以有多层，但是不建议超过三层，否则代码的可读性就会变差，嵌套结构的代码块需要注意缩进，缩进错误会导致代码运行错误
+x = float(input('x = '))            #分段函数：x > 1 走第一段，其余按 x >= -1 再分
 if x > 1:
-    y = 3 * x - 5                   #用elif可以简化代码
-else:
+    y = 3 * x - 5
+else:                               #这里的嵌套 if 可以用 elif 简化
     if x >= -1:
-        y = x + 2           
+        y = x + 2
     else:
         y = 5 * x + 3
 print(f'{y = }')
@@ -51,7 +51,7 @@ print(f'{y = }')
 
 
 
-#练习,如果输入的成绩在90分以上（含90分），则输出A；输入的成绩在80分到90分之间（不含90分），则输出B；输入的成绩在70分到80分之间（不含80分），则输出C；输入的成绩在60分到70分之间（不含70分），则输出D；输入的成绩在60分以下，则输出E
+#练习,输入成绩，90分及以上A，80-90B，70-80C，60-70D，60以下E
 score=int(input('请输入成绩：'))
 if score>=90:
     print('A')
@@ -70,7 +70,7 @@ else:
 
 
 
-#练习，输入三条边的长度，如果能构成三角形就计算周长和面积；否则给出“不能构成三角形”的提示。
+#练习，输入三条边的长度，能构成三角形就计算周长和面积，否则提示“不能构成三角形”
 
 import math
 
@@ -80,9 +80,11 @@ c = float(input('请输入c边长:'))
 if a+b>c and a+c>b and c+b>a :
     Perimeter = a + b + c
     p = Perimeter/2
-    area = math.sqrt(p*(p-a)*(p-b)*(p-c))          #sqrt的作用是开根号，必须要导入math模块才能使用，如果不导入math模块，就无法使用sqrt函数，sqrt函数的作用是开根号，sqrt(x)表示x的平方根，也就是x的1/2次幂，如果x是负数，那么sqrt(x)就会返回一个复数，如果x是0，那么sqrt(x)就会返回0，如果x是正数，那么sqrt(x)就会返回一个正数
-    print(f'{Perimeter=:.1f}')            #更简洁的写法是print(f'{Perimeter=:.1f}')，因为f-string中可以直接使用变量名=的形式来输出变量的值，这样就不需要在f-string中写出变量名了，直接写出变量名=就可以了，这样就可以更简洁的输出变量的值了，{Perimeter:.1f}表示将Perimeter的值保留一位小数
+    area = math.sqrt(p*(p-a)*(p-b)*(p-c))          #海伦公式：p 是半周长
+    print(f'{Perimeter=:.1f}')            #{变量=:.1f}：打印变量名和值，保留一位小数
     print(f'{area=:.1f}')                      
 
 else :
     print('不能构成三角形')
+
+# deepseek 酱整理注释，代码一行没动

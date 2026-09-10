@@ -1,41 +1,42 @@
-#列表是一种可变容器，可向列表内增添，删减，插入元素
+#列表是可变的容器，可以增、删、插
 #列表的方法
 
 languages = ['Python', 'Java', 'C++']
-languages.append('JavaScript')  #append可向列表内追加元素
+languages.append('JavaScript')  #追加到末尾
 print(languages)
 
-languages.insert(1,'SQL')  #使用insert向列表中插入元素
+languages.insert(1,'SQL')  #在下标 1 处插入
 print(languages)
 
 print(languages)         
-if 'C++' in languages:       #可以用列表的remove方法从列表中删除指定元素
-    languages.remove('C++')  #如果要删除的元素不在列表内，将引发ValueError错误（值错误）
+if 'C++' in languages:       #先判断再删，元素不存在时 remove 会抛 ValueError
+    languages.remove('C++')
 
-languages.pop(1)         #还可以使用pop方法删除元素，默认是最后一个元素，可以给一个位置
-print(languages)         #如果索引的值超出了范围，会引发IndexError（索引错误）
+languages.pop(1)         #删除指定下标的元素
+print(languages)         #下标越界会抛 IndexError
 
-items = languages.pop()     #pop(n)：删掉下标 n的元素，并且把删掉的元素返回
-print(items)                #pop()：删掉最后一个元素，并且把删掉的元素还给你
+items = languages.pop()     #pop() 删掉最后一个元素，并把删掉的元素返回
+print(items)
 
-languages.append(items)     #可以将值重新加入
+languages.append(items)     #把刚才删掉的加回去
 print(languages)
 
 languages.clear()
-print(languages)   #clear方法可以清空列表，但列表本身还存在，调用clear方法后，列表的长度为0
+print(languages)   #清空内容，列表对象还在，长度为 0
 
 python = ['python','C++'] * 3
 python.remove('python')
 print(python)
 
-del python[0]    #del关键词后面跟要删除的元素，执行删除且不会返回
+del python[0]    #del 直接删除，没有返回值
 print(python)
 
 items = ['Python', 'Java', 'Java', 'C++', 'Kotlin', 'Python']
-print(items.count('Python'))  #count可以统计一个元素出现的次数
-print(items.index('Python',1))  #index可以查找某个元素在列表中的索引位置，可以选择开始查找的索引位置
-                                #只找第一个指定元素出现的位置
+print(items.count('Python'))  #统计出现次数
+print(items.index('Python',1))  #从下标 1 开始找，只返回第一个匹配的位置
 items.sort()
-print(items)   #sort可以让列表元素排序
-items.reverse()  #reverse可以让列表元素反转排序
+print(items)   #原地排序
+items.reverse()  #原地反转
 print(items)
+
+# deepseek 酱整理注释，代码一行没动

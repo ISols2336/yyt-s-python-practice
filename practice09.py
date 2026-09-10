@@ -40,21 +40,23 @@ print(f'5出现了{if05}次')
 print(f'6出现了{if06}次')
 
 
-#创建列表，可以使用[]字面量语法来定义列表
-items1 = [35, 12, 99, 68, 55, 35, 87]        #列表中可以有相同元素，35
+#列表：用 [] 字面量定义
+items1 = [35, 12, 99, 68, 55, 35, 87]        #元素可以重复
 items2 = ['Python', 'Java', 'Go', 'Kotlin']
-items3 = [100, 12.3, 'Python', True]         #也可以有不同类型元素
+items3 = [100, 12.3, 'Python', True]         #元素可以是不同类型
 print(items1)  # [35, 12, 99, 68, 55, 35, 87]
 print(items2)  # ['Python', 'Java', 'Go', 'Kotlin']
 print(items3)  # [100, 12.3, 'Python', True]
 
-print(type(items1))   # <class 'list'>，列表变量类型为list，是一种容器型的数据类型
+print(type(items1))   # <class 'list'>
 
-print(list(range(1,11)))   #可以用list函数将序列变为列表
-print(list('hello'))       #字符串也可以，['h', 'e', 'l', 'l', 'o']
+print(list(range(1,11)))   #list 把序列转成列表
+print(list('hello'))       # ['h', 'e', 'l', 'l', 'o']
 
 
-print(items1 + items2)     #也可以使用+运算符，完成两个列表的拼接拼接运算会将两个列表中的元素连接起来放到一个列表中
+print(items1 + items2)     #+ 拼接两个列表
 
 items3 += items2
 print(items3)     #[100, 12.3, 'Python', True, 'Python', 'Java', 'Go', 'Kotlin']
+
+# deepseek 酱整理注释，代码一行没动

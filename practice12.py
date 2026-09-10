@@ -1,15 +1,15 @@
 #数据结构：集合
 
-#无序性：一个集合中，每个元素的地位都是相同的，元素之间是无序的。
-#互异性：一个集合中，任何两个元素都是不相同的，即元素在集合中只能出现一次。
-#确定性：给定一个集合和一个任意元素，该元素要么属这个集合，要么不属于这个集合，二者必居其一，不允许有模棱两可的情况出现。
+#无序性：元素之间没有顺序。
+#互异性：元素不能重复，重复的会自动去重。
+#确定性：一个元素要么属于这个集合，要么不属于。
 
 #创建集合
 set_1 = {1,2,3,4}
 print(set_1)
 
 set_2 = set('hello,world')
-print(set_2)  #{'r', 'e', 'o', 'h', 'w', ',', 'l', 'd'}  重复的字符只会在集合中出现一次
+print(set_2)  #{'r', 'e', 'o', 'h', 'w', ',', 'l', 'd'}  重复的字符只出现一次
 
 words = ["apple", "banana", "cat", "dog", "elephant", "ant"]
 set_3 = {w.upper() for w in words if len(w) > 3}
@@ -49,10 +49,10 @@ print(set3.difference(set2))   #{8, 10}
 #对称差
 print(set2 ^ set3)       #{1, 3, 5, 7, 8, 10}
 print(set3.symmetric_difference(set2))      #{1, 3, 5, 7, 8, 10}
-res = set3.symmetric_difference_update(set2)     #update方法会直接修改原集合，返回值为None
+res = set3.symmetric_difference_update(set2)     #注意：带 update 的版本会直接改原集合，返回 None
 print(res,set3)        #None {1, 3, 5, 7, 8, 10}
 
-#也可以在运算符后加上等号，表示将结果赋值给左边的集合
+#运算符后面加等号，表示把结果赋给左边的集合
 #set2 &= set3
 
 
@@ -63,12 +63,12 @@ set4 = {1,3,5}
 set5 = {1,3,5,7,9}
 set6 = {1,3,5,7,9}
 
-print(set4 < set5)    #True    判断set4是否为set5的真子集，反过来判断set5是否为set4的超集
-print(set4 <= set5)   #True    判断set4是否为set5的子集
-print(set6 < set5)    #False    
+print(set4 < set5)    #True    真子集；反过来看 set5 是 set4 的超集
+print(set4 <= set5)   #True    子集
+print(set6 < set5)    #False
 
-print(set4.issubset(set5))     #issubset判断set4是否为set5的子集       True
-print(set5.issuperset(set4))   #issuperset判断set5是否为set4的超集     True
+print(set4.issubset(set5))     #issubset：set4 是 set5 的子集       True
+print(set5.issuperset(set4))   #issuperset：set5 是 set4 的超集     True
 
 
 #集合的方法
@@ -87,7 +87,7 @@ while rm_1 not in set_4:
     rm_1 = int(input('请重新输入正确的元素:'))
 
 
-set_4.remove(rm_1)      #remove方法删除指定元素，如果元素不存在则会报错
+set_4.remove(rm_1)      #remove 删除指定元素，元素不存在时会报错
 
 print(f'删除后的集合结果为:{set_4}')
 
@@ -97,7 +97,7 @@ et1 = {67,114,514}
 et1.clear()
 print(et1)       #set()
 
-#isdisjoint()方法判断两个集合是否有交集，如果没有交集则返回True，否则返回False
+#isdisjoint()：两个集合没有交集时返回 True
 set7 = {'Niko','m0NESY','kuyousuke'}
 set8 = {'Donk','Shiro','kuyousuke'}
 
@@ -111,3 +111,5 @@ fest2 = frozenset(range(7))
 print(fset1)
 print(fest2)
 #frozenset不支持添加和删除元素
+
+# deepseek 酱整理注释，代码一行没动
