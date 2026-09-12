@@ -1,5 +1,5 @@
+#知识点：random 随机数；列表用 [] 定义，元素可重复、可不同类型
 #将一颗色子掷6000次，统计每种点数出现的次数
-
 import random
 
 if01 = 0
@@ -9,9 +9,9 @@ if04 = 0
 if05 = 0
 if06 = 0
 
-for _ in range(6000) :
+for _ in range(6000) :       #_ 表示这个循环变量用不到
     
-    i = random.randint(1,6)
+    i = random.randint(1,6)  #randint(1,6) 生成 1 到 6 的随机整数（闭区间）
     
     if i == 1 :
         if01 += 1
@@ -50,13 +50,13 @@ print(items3)  # [100, 12.3, 'Python', True]
 
 print(type(items1))   # <class 'list'>
 
-print(list(range(1,11)))   #list 把序列转成列表
-print(list('hello'))       # ['h', 'e', 'l', 'l', 'o']
+print(list(range(1,11)))   #list() 把序列转成列表
+print(list('hello'))       #字符串也可拆成 ['h','e','l','l','o']
 
 
-print(items1 + items2)     #+ 拼接两个列表
+print(items1 + items2)     #+ 拼接两个列表（返回新列表）
 
-items3 += items2
+items3 += items2           #+= 原地扩展，等价 items3 = items3 + items2
 print(items3)     #[100, 12.3, 'Python', True, 'Python', 'Java', 'Go', 'Kotlin']
 
-# deepseek 酱整理注释，代码一行没动
+# 蓝酱整理注释，代码一行没动

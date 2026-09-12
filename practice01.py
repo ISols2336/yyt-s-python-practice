@@ -1,5 +1,6 @@
+#知识点：print() 输出；字符串可以用单引号或双引号包裹
 print('hello world')
 print('hello python')
 print('hello git')
 
-# deepseek 酱整理注释，代码一行没动
+# 蓝酱整理注释，代码一行没动

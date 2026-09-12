@@ -1,3 +1,4 @@
+#知识点：字符串、转义、原始字符串、三元表达式、unicode 编码、切片
 #字符串：由零个或多个字符组成的有限序列
 
 s1 = '''hello,
@@ -31,27 +32,27 @@ else :
     print('文本2大')
 
 
-print('文本1大' if s6 > s7 else '文本12相等' if s6 == s7 else '文本2大')  #嵌套三元式
+print('文本1大' if s6 > s7 else '文本12相等' if s6 == s7 else '文本2大')  #三元式：真值 if 条件 else 假值
 
 
-#字符串的特殊标识 可以用八进制和十六进制
+#字符串的特殊标识：\u 开头是十六进制 unicode 编码
 str1 = '\u6211\u7684python\u7ec3\u4e60'
 print(str1)  #我的python练习
 
 
 
 #字符串的运算
-str2 = 'hello' + ',' + 'world'   #拼接
+str2 = 'hello' + ',' + 'world'   #+ 拼接
 print(str2)
 
-str3 = '!?!' * 3  #!?!!?!!?!
-print(str3)
+str3 = '!?!' * 3  #* 重复
+print(str3)       #!?!!?!!?!
 
-str2 += str3   #hello,world!?!!?!!?!
-print(str2)
+str2 += str3   #+= 原地拼接
+print(str2)    #hello,world!?!!?!!?!
 
 
-#成员运算符in 和 not in
+#成员运算符 in 和 not in
 print('he'not in str2)    #False
 print('耍起' in str3)     #False
 
@@ -76,4 +77,4 @@ print(str4[:2])      #结束位置为2，开始省略，默认为0，结果 go
 print(str4[3:])      #dbye,world 从下标 3 一直取到末尾
 print(str4[::-2])    #drwebog，step 为负表示反向取
 
-# deepseek 酱整理注释，代码一行没动
+# 蓝酱整理注释，代码一行没动

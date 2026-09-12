@@ -1,3 +1,4 @@
+#知识点：% 格式化、字符串方法（查找/判断/对齐/拆分/替换/编码）
 #字符串的格式化
 
 #拼接
@@ -31,10 +32,10 @@ s_1 ='hello,world!'
 
 s_2 ='GOOD'
 
-print(s_1.capitalize())    #Hello,world!
-print(s_1.title())         #Hello,World!
-print(s_1.upper())         #HELLO,WORLD!
-print(s_2.lower())         #good
+print(s_1.capitalize())    #Hello,world!  首字母大写，其余小写
+print(s_1.title())         #Hello,World!  每个单词首字母大写
+print(s_1.upper())         #HELLO,WORLD!  全大写
+print(s_2.lower())         #good          全小写
 
 
 #查找
@@ -80,9 +81,9 @@ print(str_4.ljust(20,'%'))           #左对齐
 #拆分合并
 str_5 = 'I Love You'
 s1 = str_5.split()
-print(s1)       #['I', 'Love', 'You']
+print(s1)       #['I', 'Love', 'You']  split 默认按空白拆分
 s2 = '-'.join(s1)
-print(s2)       #I-Love-You
+print(s2)       #I-Love-You  join 用分隔符连接
 s3 = '123'
 print(s3.join(s1))    #I123Love123You，用 s3 连接每个元素
 
@@ -94,7 +95,7 @@ str_6 = 'Guten Tag'
 print(str_6.replace('t','123',1))   #把 't' 换成 '123'，只换 1 次
 
 
-#编码
+#编码：字符串 ↔ 字节
 a = '你行走感到吃力，是因为你在走上坡路'
 b = a.encode('UTF-8')
 print(type(b))     #<class 'bytes'>
@@ -104,4 +105,4 @@ print(b.decode('UTF-8'))   #编码和解码要用同一种字符集，否则乱�
 c = a.encode('GBK')        
 print(c.decode('gbk'))
 
-# deepseek 酱整理注释，代码一行没动
+# 蓝酱整理注释，代码一行没动

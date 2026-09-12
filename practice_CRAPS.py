@@ -1,3 +1,4 @@
+#知识点：random 掷骰子、while 循环嵌套、break/continue 控制游戏流程
 #CRAPS又称花旗骰，是美国拉斯维加斯非常受欢迎的一种桌上赌博游戏，用两粒骰子。
 #简化规则：
 #  第一次摇出 7 或 11 点，玩家胜；
@@ -9,15 +10,15 @@ import random
 cash = 1000
 first = None
 
-while cash > 0 :
+while cash > 0 :        #外层循环：只要还有钱就一直玩
     print(f'你还有{cash}元')
 
-    while True:
+    while True:         #内层循环：直到下注金额合法才跳出
         
         bet =int(input('请下注\n'))
         
         if bet <= cash:
-            first = random.randint(1,6) + random.randint(1,6)
+            first = random.randint(1,6) + random.randint(1,6)   #两粒骰子相加
             print(f'结果是{first}')
 
             if first == 11 or first == 7 :
@@ -43,7 +44,7 @@ while cash > 0 :
     
     else :
 
-        while cash > 0 :
+        while cash > 0 :        #目标点阶段：继续摇
             
             second = random.randint(1,6) + random.randint(1,6)
             print(f'结果是{second}')
@@ -59,4 +60,4 @@ while cash > 0 :
 if cash == 0 :
     print('你没钱了，游戏结束')
 
-# deepseek 酱整理注释，代码一行没动
+# 蓝酱整理注释，代码一行没动

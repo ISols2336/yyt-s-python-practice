@@ -1,8 +1,9 @@
 #原神牛逼
 
+#知识点：match/case 模式匹配（Python 3.10+）；海伦公式求三角形面积
 status_code = int(input('响应状态码: '))
 match status_code:
-    case 400: description = 'Bad Request'
+    case 400: description = 'Bad Request'     #match 按值匹配，类似 if/elif 但更紧凑
     case 401: description = 'Unauthorized'
     case 403: description = 'Forbidden'
     case 404: description = 'Not Found'
@@ -51,7 +52,7 @@ print(f'{y = }')
 
 
 
-#练习,输入成绩，90分及以上A，80-90B，70-80C，60-70D，60以下E
+#练习：输入成绩，90 及以上 A、80-90 B、70-80 C、60-70 D、60 以下 E
 score=int(input('请输入成绩：'))
 if score>=90:
     print('A')
@@ -70,8 +71,8 @@ else:
 
 
 
-#练习，输入三条边的长度，能构成三角形就计算周长和面积，否则提示“不能构成三角形”
-
+#练习：输入三条边，能构成三角形就算周长和面积，否则提示
+#构成条件：任意两边之和大于第三边
 import math
 
 a = float(input('请输入a边长:'))
@@ -80,11 +81,11 @@ c = float(input('请输入c边长:'))
 if a+b>c and a+c>b and c+b>a :
     Perimeter = a + b + c
     p = Perimeter/2
-    area = math.sqrt(p*(p-a)*(p-b)*(p-c))          #海伦公式：p 是半周长
+    area = math.sqrt(p*(p-a)*(p-b)*(p-c))          #海伦公式：p 是半周长，sqrt 开根号
     print(f'{Perimeter=:.1f}')            #{变量=:.1f}：打印变量名和值，保留一位小数
     print(f'{area=:.1f}')                      
 
 else :
     print('不能构成三角形')
 
-# deepseek 酱整理注释，代码一行没动
+# 蓝酱整理注释，代码一行没动

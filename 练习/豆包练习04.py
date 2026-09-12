@@ -1,3 +1,4 @@
+#知识点：只用 while 拆解三位数；反斜杠 \ 续行
 #只用 while，不能 for、不能 range、不导入任何模块
 #从 100 循环到 999
 #拆分：百位、十位、个位
@@ -14,10 +15,10 @@ while nummer < 1000 :
     first =  nummer // 100       #百位
 
     if first ** 3 + second ** 3 + third ** 3 != nummer and \
-    first ** 3 + second ** 3 + third ** 3 > 500:
+    first ** 3 + second ** 3 + third ** 3 > 500:   #反斜杠 \ 表示续行，条件太长换行写
        
         print(nummer)
     
     nummer += 1
 
-# deepseek 酱整理注释，代码一行没动
+# 蓝酱整理注释，代码一行没动
