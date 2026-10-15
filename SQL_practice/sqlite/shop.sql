@@ -12,11 +12,30 @@ SELECT * FROM products;
 
 -- 接下来自己写查询；逐条选中，使用 SQLite: Run Selected Query 运行。
 -- 1. 只显示商品名称和单价。
--- 2. 列出所有不重复的商品分类。
--- 3. 统计产地国家一共有多少种。
--- 4. 查询单价大于或等于 100 元的商品。
--- 5. 查询库存为 0 的商品。
--- 6. 查询分类为“图书”的商品，只显示名称和单价。
--- 7. 按单价从高到低显示所有商品。
--- 8. 先按分类升序，同一分类内再按单价降序排列。
+SELECT name, price FROM products;
 
+-- 2. 列出所有不重复的商品分类。
+SELECT DISTINCT category FROM products;
+
+-- 3. 统计产地国家一共有多少种。
+SELECT COUNT(DISTINCT country) FROM products;
+
+-- 4. 查询单价大于或等于 100 元的商品。
+SELECT * FROM products
+WHERE price >= 100;
+
+-- 5. 查询库存为 0 的商品。
+SELECT * FROM products
+WHERE stock = 0;
+
+-- 6. 查询分类为“图书”的商品，只显示名称和单价。
+SELECT name, price FROM products
+WHERE category = '图书';
+
+-- 7. 按单价从高到低显示所有商品。
+SELECT * FROM products
+ORDER BY price DESC;
+
+-- 8. 先按分类升序，同一分类内再按单价降序排列。
+SELECT * FROM products
+ORDER BY category, price DESC;
