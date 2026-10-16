@@ -66,3 +66,41 @@ VALUES
 
 SELECT * FROM practicedb.practice_table ORDER BY id;
 
+-- 2026-10-16：修改、删除、限制返回条数，以及计算比例。
+-- UPDATE：修改表中已有的记录；SET：指定要修改的列和新值。
+-- 本句只把编号 4 的描述改为“龙娘暖暖的”，其他列保持原值。
+-- UPDATE 不写 WHERE 会修改所有行；执行前先核对条件。
+UPDATE practice_table
+SET description = '龙娘暖暖的'
+WHERE id = 4;
+-- SQLBook: Code
+-- 查询验证：检查编号 4 的 description 是否已更新。
+SELECT * FROM practice_table;
+
+-- DELETE FROM：删除符合条件的整行记录，不只是清空某一列。
+-- 本句删除编号 5 的记录，表结构和其他编号的记录仍保留。
+-- DELETE 不写 WHERE 会删除表中所有记录；执行前先核对条件。
+-- 同一删除语句再次运行时，若编号 5 已不存在，通常影响 0 行。
+DELETE FROM practice_table
+WHERE id = 5;
+
+-- 查询验证：检查编号 5 是否已从结果中消失。
+SELECT * FROM practice_table;
+
+-- LIMIT 3：最多返回 3 条记录；不足 3 条时返回现有记录。
+-- LIMIT 只限制查询结果，不会删除其余记录。
+-- 不写 ORDER BY，不能保证每次返回的是哪些行；要按编号取前 3 条，可在 LIMIT 前加 ORDER BY id。
+SELECT * FROM practice_table
+LIMIT 3;
+
+-- COUNT(*) * 0.8：用总记录数乘以 80%。
+-- CEIL(...)：向上取整，例如 CEIL(3.2) = 4，CEIL(4) = 4。
+-- 本句只返回计算得到的条数，不会直接返回这些记录。
+-- 例如总共 5 条时算出 4，总共 4 条时也算出 4；向上取整后，实际比例可能高于 80%。
+SELECT CEIL(COUNT(*) * 0.8) FROM practice_table;
+
+-- LIMIT 4：固定最多取 4 条，不会随总记录数自动变成 80%。
+-- 如果想按上面的计算结果取记录，这里先手动填写算出的整数；总记录数变化后要重新计算。
+-- 若要明确取编号最小的 4 条，同样应在 LIMIT 前加 ORDER BY id。
+SELECT * FROM practice_table
+LIMIT 4;
